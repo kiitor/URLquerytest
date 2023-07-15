@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
     <script src="index.js"></script>
-   
+    <style>
+        .typing-animation {
+            border-right: .15em solid;
+            animation: typing 1s steps(40, end), blink-caret .5s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+    </style>
 </head>
 <body>
-    <input type="text" value="name" id="nameinput">
-    <input type="text" value="age" id="ageinput">
-    <input type="button" value="確定" id="submit">
+    <input type="text" value="name" id="nameinput" required>
+    <input type="text" value="age" id="ageinput" required>
+    <input type="button" value="確定" id="submit" required>
     <div>
-        <p id="name"></p>
-        <p id="age"></p>
+        <p id="result">
+            <span id="name"></span>
+            <span id="age"></span>
+        </p>
     </div>
     
     <script src="index.js"></script>
